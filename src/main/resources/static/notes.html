@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas - Colegio Claretiano de Huancayo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">Colegio Claretiano<br>de Huancayo</div>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="students.html">Estudiantes</a>
+                <a href="teachers.html">Docentes</a>
+                <a href="courses.html">Cursos</a>
+                <a href="grades.html">Grados</a>
+                <a href="sections.html">Secciones</a>
+                <a href="notes.html">Notas</a>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title">Notas</div>
+                <div class="user-info">
+                    <span id="currentUserName"></span>
+                    <span class="badge" id="currentUserRole"></span>
+                    <button class="btn btn-secondary btn-sm" id="logoutBtn">Cerrar sesión</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="content-header">
+                    <h2>Lista de notas</h2>
+                    <button class="btn btn-primary" id="addNoteBtn">Agregar nota</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Estudiante</th>
+                                <th>Curso</th>
+                                <th>Docente</th>
+                                <th>Nota</th>
+                                <th>Observación</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notesTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="noteModal">
+        <div class="modal">
+            <h2 id="noteModalTitle">Agregar nota</h2>
+            <div id="noteError" class="alert alert-error"></div>
+            <form id="noteForm">
+                <div class="form-group">
+                    <label for="noteStudentId">Estudiante</label>
+                    <select id="noteStudentId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="noteCourseId">Curso</label>
+                    <select id="noteCourseId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="noteTeacherId">Docente</label>
+                    <select id="noteTeacherId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="noteScore">Nota (0 a 20)</label>
+                    <input type="number" id="noteScore" min="0" max="20" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="noteObservation">Observación</label>
+                    <textarea id="noteObservation"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelNoteBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+.login-page,
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+    box-sizing: border-box;
+}
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #7a1f2b 0%, #4a1017 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.login-box {
+    background: #fff;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 10px;
+    padding: 36px 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.login-box .logo {
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #7a1f2b;
+}
+
+.login-box .subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 26px;
+}
+
+.login-box .form-group {
+    margin-bottom: 16px;
+}
+
+.login-box label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.login-box input {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Remove native browser icons (Edge reveal/clear, Chrome autofill icons)
+   that otherwise eat into the right padding of the password field only,
+   making it look narrower than the username field. */
+.login-box input[type="password"]::-ms-reveal,
+.login-box input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #7a1f2b;
+}
+
+.login-box button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    background-color: #7a1f2b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #631824;
+}
+
+.login-box .error-msg {
+    background-color: #fdecea;
+    color: #c0392b;
+    border: 1px solid #f5c6cb;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    display: none;
+}

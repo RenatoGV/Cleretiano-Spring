@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiantes - Colegio Claretiano de Huancayo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">Colegio Claretiano<br>de Huancayo</div>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="students.html">Estudiantes</a>
+                <a href="teachers.html">Docentes</a>
+                <a href="courses.html">Cursos</a>
+                <a href="grades.html">Grados</a>
+                <a href="sections.html">Secciones</a>
+                <a href="notes.html">Notas</a>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title">Estudiantes</div>
+                <div class="user-info">
+                    <span id="currentUserName"></span>
+                    <span class="badge" id="currentUserRole"></span>
+                    <button class="btn btn-secondary btn-sm" id="logoutBtn">Cerrar sesión</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="content-header">
+                    <h2>Lista de estudiantes</h2>
+                    <button class="btn btn-primary" id="addStudentBtn">Agregar estudiante</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>DNI</th>
+                                <th>Nombre completo</th>
+                                <th>Grado</th>
+                                <th>Sección</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="studentModal">
+        <div class="modal">
+            <h2 id="studentModalTitle">Agregar estudiante</h2>
+            <div id="studentError" class="alert alert-error"></div>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="studentCode">Código</label>
+                    <input type="text" id="studentCode" required placeholder="Ej: E001">
+                </div>
+                <div class="form-group">
+                    <label for="studentDni">DNI</label>
+                    <input type="text" id="studentDni" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentFirstName">Nombres</label>
+                    <input type="text" id="studentFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentLastName">Apellidos</label>
+                    <input type="text" id="studentLastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentBirthDate">Fecha de nacimiento</label>
+                    <input type="date" id="studentBirthDate">
+                </div>
+                <div class="form-group">
+                    <label for="studentGender">Género</label>
+                    <select id="studentGender">
+                        <option value="">Seleccione</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="studentAddress">Dirección</label>
+                    <input type="text" id="studentAddress">
+                </div>
+                <div class="form-group">
+                    <label for="studentGradeId">Grado</label>
+                    <select id="studentGradeId" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="studentSectionId">Sección</label>
+                    <select id="studentSectionId" required></select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelStudentBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/students.js"></script>
+</body>
+</html>

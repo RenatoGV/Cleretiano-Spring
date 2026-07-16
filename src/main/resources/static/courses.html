@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cursos - Colegio Claretiano de Huancayo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">Colegio Claretiano<br>de Huancayo</div>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="students.html">Estudiantes</a>
+                <a href="teachers.html">Docentes</a>
+                <a href="courses.html">Cursos</a>
+                <a href="grades.html">Grados</a>
+                <a href="sections.html">Secciones</a>
+                <a href="notes.html">Notas</a>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title">Cursos</div>
+                <div class="user-info">
+                    <span id="currentUserName"></span>
+                    <span class="badge" id="currentUserRole"></span>
+                    <button class="btn btn-secondary btn-sm" id="logoutBtn">Cerrar sesión</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="content-header">
+                    <h2>Lista de cursos</h2>
+                    <button class="btn btn-primary" id="addCourseBtn">Agregar curso</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coursesTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="courseModal">
+        <div class="modal">
+            <h2 id="courseModalTitle">Agregar curso</h2>
+            <div id="courseError" class="alert alert-error"></div>
+            <form id="courseForm">
+                <div class="form-group">
+                    <label for="courseName">Nombre</label>
+                    <input type="text" id="courseName" required placeholder="Ej: Matemática">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelCourseBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>

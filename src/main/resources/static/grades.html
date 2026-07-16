@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grados - Colegio Claretiano de Huancayo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">Colegio Claretiano<br>de Huancayo</div>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="students.html">Estudiantes</a>
+                <a href="teachers.html">Docentes</a>
+                <a href="courses.html">Cursos</a>
+                <a href="grades.html">Grados</a>
+                <a href="sections.html">Secciones</a>
+                <a href="notes.html">Notas</a>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title">Grados</div>
+                <div class="user-info">
+                    <span id="currentUserName"></span>
+                    <span class="badge" id="currentUserRole"></span>
+                    <button class="btn btn-secondary btn-sm" id="logoutBtn">Cerrar sesión</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="content-header">
+                    <h2>Lista de grados</h2>
+                    <button class="btn btn-primary" id="addGradeBtn">Agregar grado</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Nivel</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="gradeModal">
+        <div class="modal">
+            <h2 id="gradeModalTitle">Agregar grado</h2>
+            <div id="gradeError" class="alert alert-error"></div>
+            <form id="gradeForm">
+                <div class="form-group">
+                    <label for="gradeName">Nombre</label>
+                    <input type="text" id="gradeName" required placeholder="Ej: 1ro de Secundaria">
+                </div>
+                <div class="form-group">
+                    <label for="gradeLevel">Nivel</label>
+                    <select id="gradeLevel" required>
+                        <option value="INITIAL">Inicial</option>
+                        <option value="PRIMARY">Primaria</option>
+                        <option value="SECONDARY">Secundaria</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelGradeBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/grades.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Colegio Claretiano de Huancayo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">Colegio Claretiano<br>de Huancayo</div>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="students.html">Estudiantes</a>
+                <a href="teachers.html">Docentes</a>
+                <a href="courses.html">Cursos</a>
+                <a href="grades.html">Grados</a>
+                <a href="sections.html">Secciones</a>
+                <a href="notes.html">Notas</a>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title">Dashboard</div>
+                <div class="user-info">
+                    <span id="currentUserName"></span>
+                    <span class="badge" id="currentUserRole"></span>
+                    <button class="btn btn-secondary btn-sm" id="logoutBtn">Cerrar sesión</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <p class="welcome-msg">Bienvenido al sistema de gestión académica y matrículas.</p>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-label">Total de estudiantes</div>
+                        <div class="card-value" id="totalStudents">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label">Total de docentes</div>
+                        <div class="card-value" id="totalTeachers">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label">Total de cursos</div>
+                        <div class="card-value" id="totalCourses">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label">Total de grados</div>
+                        <div class="card-value" id="totalGrades">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label">Total de secciones</div>
+                        <div class="card-value" id="totalSections">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label">Total de notas</div>
+                        <div class="card-value" id="totalNotes">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

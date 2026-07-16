@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Secciones - Colegio Claretiano de Huancayo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">Colegio Claretiano<br>de Huancayo</div>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="students.html">Estudiantes</a>
+            <a href="teachers.html">Docentes</a>
+            <a href="courses.html">Cursos</a>
+            <a href="grades.html">Grados</a>
+            <a href="sections.html">Secciones</a>
+            <a href="notes.html">Notas</a>
+        </nav>
+    </aside>
+
+    <div class="main">
+        <header class="topbar">
+            <div class="page-title">Secciones</div>
+            <div class="user-info">
+                <span id="currentUserName"></span>
+                <span class="badge" id="currentUserRole"></span>
+                <button class="btn btn-secondary btn-sm" id="logoutBtn">Cerrar sesión</button>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="content-header">
+                <h2>Lista de secciones</h2>
+                <button class="btn btn-primary" id="addSectionBtn">Agregar sección</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody id="sectionsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="sectionModal">
+    <div class="modal">
+        <h2 id="sectionModalTitle">Agregar sección</h2>
+        <div id="sectionError" class="alert alert-error"></div>
+        <form id="sectionForm">
+            <div class="form-group">
+                <label for="sectionName">Nombre</label>
+                <input type="text" id="sectionName" required placeholder="Ej: A">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelSectionBtn">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sections.js"></script>
+</body>
+</html>
